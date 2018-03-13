@@ -1,0 +1,9 @@
+<form action="/<%= @tarea['id'] %>/complete " method="get">
+    <div class="form-group">
+        <label for="tarea">terminar tarea</label>
+        <input disabled type="text" name="tarea" class="form-control" id="tarea" value="<%= @tarea['title'] %>">
+        <label for="tarea">seleccionelo para terminar la tarea</label>
+        <input type="checkbox" name="done" >
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

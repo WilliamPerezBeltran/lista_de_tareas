@@ -1,0 +1,30 @@
+<form action="/" method="post">
+    <div class="form-group">
+        <label for="tarea">tarea</label>
+        <input type="text" name="tarea" class="form-control" id="tarea">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<br>
+<br>
+<a href="/terminadas"><button type="button" class="btn btn-primary">listar tareas terminadas </button></a>
+<a href="/sin_terminar"><button type="button" class="btn btn-secondary">listar tareas sin terminar</button></a>
+
+
+<% @tareas.each do |tarea| %>
+    <section>
+        <br>
+        <div class="card card-body bg-light">
+            <p><%= tarea['title'] %></p>
+            <a href="/<%= tarea['id'] %> ">eliminar tarea</a>
+            <% if tarea['done'] == false %>
+                <p style="color :red">sin terminar</p>
+                <a href="/<%= tarea['id'] %>/terminar">terminar tarea</a>
+                <% else %>
+                <p style="color :blue">tarea terminada</p>
+            <% end %>
+
+        </div>
+    </section>
+
+<% end %>

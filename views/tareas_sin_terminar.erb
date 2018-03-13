@@ -1,0 +1,18 @@
+<a href="/">back</a>
+<h1>tareas sin terminar terminadas </h1>
+<% @tareas.each do |tarea| %>
+    <section>
+        <% if tarea['done'] == false %>
+        <br>
+        <div class="card card-body bg-light">
+            <p><%= tarea['title'] %></p>
+            <a href="/<%= tarea['id'] %> ">eliminar tarea</a>
+            <a href="/<%= tarea['id'] %>/terminar">terminar tarea</a>
+            
+
+        </div>
+        <% end  %>
+        
+    </section>
+
+<% end %>
